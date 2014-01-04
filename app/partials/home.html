@@ -4,10 +4,11 @@
          <h3 class="panel-title"><a href="/view/{{id}}">{{post.title}}</a></h3>
       </div>
       <div class="panel-body">
-         by<label ng-repeat="author in post.authors">
+         by <label ng-repeat="author in post.authors">
             {{author}},
          </label>
-         <p>{{post.content}}</p>
+         <div class="well">{{post.content}}</div>
+         {{post.date}}
          <div class="panel-footer">
             <label ng-repeat="tag in post.tags">
                {{tag}}, 
