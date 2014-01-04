@@ -1,0 +1,10 @@
+<div ng-repeat="post in blogs">
+<h1>{{post.title}}</h1>
+<div ng-repeat="author in post.authors">
+<p>{{author}}</p>
+</div>
+<p>{{post.content}}</p>
+<div ng-repeat="tag in post.tags">
+{{tag}}
+</div>
+</div>
