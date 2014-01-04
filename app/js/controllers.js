@@ -9,23 +9,12 @@ angular.module('myApp.controllers', [])
       //var blog = new Firebase('https://onaclovtech-blog.firebaseio.com/blog_posts');
       //$scope.blogs = $firebase(blog.limit(10));
    }])
-
-  .controller('ChatCtrl', ['$scope', 'syncData', function($scope, syncData) {
-      $scope.newMessage = null;
-
-      // constrain number of messages by limit into syncData
-      // add the array into $scope.messages
-      $scope.messages = syncData('messages', 10);
-
-      // add new messages to the list
-      $scope.addMessage = function() {
-         if( $scope.newMessage ) {
-            $scope.messages.$add({text: $scope.newMessage});
-            $scope.newMessage = null;
-         }
-      };
+      .controller('newPostCtrl', ['$scope', 'syncData', function($scope, syncData) {
+      //syncData('syncedValue').$bind($scope, 'syncedValue');
+      //$scope.blogs = syncData('blog_posts');
+      //var blog = new Firebase('https://onaclovtech-blog.firebaseio.com/blog_posts');
+      //$scope.blogs = $firebase(blog.limit(10));
    }])
-
    .controller('LoginCtrl', ['$scope', 'loginService', '$location', function($scope, loginService, $location) {
       $scope.email = null;
       $scope.pass = null;
