@@ -1,10 +1,18 @@
-<div ng-repeat="post in blogs">
-<h1>{{post.title}}</h1>
-<div ng-repeat="author in post.authors">
-<p>{{author}}</p>
-</div>
-<p>{{post.content}}</p>
-<div ng-repeat="tag in post.tags">
-{{tag}}
-</div>
+<div ng-repeat="(id,post) in blogs">
+   <div class="panel panel-primary">
+      <div class="panel-heading">
+         <h3 class="panel-title"><a href="/view/{{id}}">{{post.title}}</a></h3>
+      </div>
+      <div class="panel-body">
+         by<label ng-repeat="author in post.authors">
+            {{author}},
+         </label>
+         <p>{{post.content}}</p>
+         <div class="panel-footer">
+            <label ng-repeat="tag in post.tags">
+               {{tag}}, 
+            </label>
+         </div>
+      </div>
+   </div>
 </div>
